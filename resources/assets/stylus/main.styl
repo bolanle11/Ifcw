@@ -1,0 +1,143 @@
+@import "libs/normalize";
+@import "libs/skeleton";
+@import "colors";
+@import "util";
+@import "tease";
+
+@import "grid";
+@import "main-header";
+@import "main-nav";
+@import "widget";
+@import "footer";
+
+
+html{
+	font-size: 16px;
+}
+body{
+	min-height:100vh;
+	background:whitesmoke url(http://ifcw.dev/wp-content/uploads/2016/09/image_1.jpg);
+	    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+	font-family: 'RaleWay', sans-serif;
+	font-weight: 500;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	color:#595143;
+}
+
+iframe {
+	max-width: 100%;
+}
+.home
+	h3
+		font-size: 2.25rem
+	.alignnone
+		margin: 0px
+
+.main-container{
+	min-height:100vh;
+	width:100%;
+	overflow: hidden;
+    //max-width: 1400px;
+	margin: auto;
+	background: #fff;
+}
+
+
+.content-wrapper{
+	&.home{
+		padding: 0;
+		& .main-content{
+			float: none;
+			padding: 0rem;
+			width: 100%;
+		}
+	}
+}
+
+.main-content{
+	.blog &,.single-post &{
+		padding-right:  2rem;
+
+	}
+	padding-top:2em;
+	width: 70%;
+	float: left;
+	flex:1 0 70%;
+}
+
+.main-sidebar{
+	width: 30%;
+	float: left;
+	padding-left: 2rem;
+	flex:1 0 290px;
+}
+.button{
+    display: inline-block;
+    text-align: center;
+    padding: 0.65em 1.75em;
+    font-weight: 700;
+    font-size: 0.867em;
+    text-transform: uppercase;
+	background-color: #ff6a48
+	color: #fff;
+	text-decoration: none;
+	&:hover{
+	text-decoration: none;
+        background: #ff9279;
+	}
+}
+
+.widget-features .textwidget{
+	background: white;
+	padding: 2.5em;
+	& p{
+		color: rgb(159, 160, 163);
+	}
+
+
+}
+
+.home .sow-features-list .sow-features-feature p.sow-more-text a {
+  font-weight: 700;
+ color: #fff;
+  text-decoration: none;
+  &:hover{
+	  text-decoration: none;
+  }
+}
+
+.home .sow-features-list .sow-icon-container{
+	display: none;
+}
+.sow-more-text > a{
+	display: inline-block;
+    text-align: center;
+    padding: 0.65em 1.75em;
+    font-weight: 700;
+    font-size: 0.867em;
+    text-transform: uppercase;
+	background-color: #ff6a48
+	color: #fff;
+	text-decoration: none;
+	&:hover{
+		text-decoration: none;
+        background: #ff9279;
+	}
+}
+
+.page-title{
+	font-size: .9rem;
+	margin: 0px;
+	color:#fff;
+	text-transform: uppercase;
+}
+
+.content-header{
+	background: #5E606D;
+	padding: 1.5rem 2rem;
+}
+@import "media-queries";

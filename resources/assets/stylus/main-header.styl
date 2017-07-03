@@ -1,0 +1,42 @@
+.logo{
+    padding: 20px;
+    &__img{
+
+    }
+
+    &--nav{
+        display: none;
+        padding: 0px;
+        align-self: flex-start;
+        padding: 0px  15px;
+        margin-right: auto;
+        & .logo__link{
+            display: inline;
+            padding: 0px;
+            border: none;
+        }
+    }
+
+    &__link{
+        font-size: 2rem;
+        line-height: 1.85em;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #fff;
+        &:hover{
+            color: #fff;
+        }
+    }
+}
+
+.main-header{
+    background:#4E505D;
+    text-align: center;
+    .home &{
+        background:rgba(#4E505D,0);
+        width: 100%;
+        position: absolute;
+        z-index: 99999;
+    }
+
+}

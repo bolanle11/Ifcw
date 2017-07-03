@@ -1,0 +1,106 @@
+{% block html_head_container %}
+
+	{% include 'partials/html-header.twig' %}
+
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<main class="main-container">
+			<header class="main-header" >
+
+					{% block header %}
+
+							<div class="logo" role="banner">
+								<img src="{{theme.link}}/public/images/dove-1.png" alt="dove" class="logo__img" />
+								<a class="logo__link" href="{{site.url}}" rel="home">{{site.name}}</a>
+							</div>
+
+							<nav id="main-nav" class="main-nav" role="navigation">
+								<div class="container">
+									<div class="logo--nav" role="banner">
+										<img src="{{theme.link}}/public/images/dove-1.png" alt="dove" class="logo__img" />
+										<a class="logo__link" href="{{site.url}}" rel="home">IFC</a>
+									</div>
+									<div class="main-nav__icon">
+										<i class="fa fa-bars" aria-hidden="true"></i>
+									</div>
+									<div class="main-nav__wrap">
+										{% include "partials/menu.twig" with {'menu': menu.get_items} %}
+										{#{{ function('get_search_form') }} #}
+									</div>
+									<div class="main-nav__small">
+										{% include "partials/menu.twig" with {'menu': menu.get_items} %}
+										{#{{ function('get_search_form') }} #}
+									</div>
+
+								</div>
+							</nav><!-- #nav -->
+
+					{% endblock %}
+
+
+			</header>
+
+			<section role="main" class="main-content-wrapper ">
+				{% block main_content %}
+					{% if title %}
+
+						<header class="content-header">
+							<div class="container">
+								<h1 class="page-title">
+									{% block title %}
+										{{title}}
+									{% endblock %}
+								</h1>
+								<!-- <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+			        				{# {{function('bcn_display')}} #}
+								</div> -->
+							</div>
+						</header>
+					{% endif %}
+
+					<section class="page">
+						<div class="container wrap--flex ">
+
+							<article class="main-content {{sidebar_class}}">
+								{% block content %}
+									Sorry, no content
+								{% endblock %}
+								{% include 'partials/pagination.twig' %}
+							</article>
+							{% if full_width %}
+								{% else %}
+									{% if sidebar %}
+										{{sidebar}}
+									{% endif %}
+							{% endif %}
+						</div>
+					</section>
+				{% endblock %}
+			</section>
+
+			{% block footer %}
+				<footer id="footer" class="main-footer">
+					<div class="container wrap">
+						{% include 'partials/footer.twig' %}
+						<div class="main-footer__copyright">
+			                © {{"now"|date('Y')}} {{site.name}}. All Rights Reserved.
+			            </div>
+
+					</div>
+				</footer>
+				{{ function('wp_footer') }}
+			{% endblock %}
+		</div>
+		<script src="{{ theme.link }}/public/js/jquery.waypoints.min.js"></script>
+	<script src="{{ theme.link }}/public/js/sticky.min.js"></script>
+	<script type="text/javascript">
+	var sticky = new Waypoint.Sticky({
+	    element: $('.main-nav')[0]
+	});
+	$('.main-nav__icon').on('click',function() {
+		$('.main-nav__small').toggleClass('menu_active');
+	})
+	</script>
+	</body>
+</html>
