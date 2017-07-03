@@ -1,1 +1,1 @@
-"# Rccg House Of Glory" 
+# Wordpress theme
